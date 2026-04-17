@@ -1,21 +1,33 @@
-from elevenlabs.client import ElevenLabs
 import os
 from dotenv import load_dotenv
+from elevenlabs.client import ElevenLabs
+
 load_dotenv()
-client = ElevenLabs(
-    api_key=os.getenv("ELEVEN_API_KEY")
-)
+API_KEY = os.getenv("ELEVEN_API_KEY")
+# ====== TEXT ======
+script = """
+Welcome to this tutorial on Flow Matching.
+In this video, we will explore the basic concepts, advanced designs,
+and real-world applications of flow-based generative models.
+"""
+
+# ====== GENERATE VOICE ======
+print("Generating voice...")
+
+client = ElevenLabs(api_key=API_KEY)
 
 audio = client.text_to_speech.convert(
-    text="Hello everyone, and welcome to this tutorial. Today, we are going to explore how artificial intelligence can help you create high-quality videos automatically, from converting text into natural-sounding speech, to combining visuals, audio, and structured content into a complete and professional final product. This process not only saves you a significant amount of time, but also allows you to focus more on creativity and storytelling, making your videos more engaging and effective for your audience.",
+    text=script,
     voice_id="JBFqnCBsd6RMkjVDRZzb",
     model_id="eleven_multilingual_v2",
     output_format="mp3_44100_128",
 )
 
-# Lưu file
-with open("voice.mp3", "wb") as f:
-    for chunk in audio:
-        f.write(chunk)
+# Convert stream to bytes
+audio_bytes = b"".join(audio)
 
-print("Saved as voice.mp3")
+# Save file
+with open("voice.mp3", "wb") as f:
+    f.write(audio_bytes)
+
+print("DONE! File saved as voice.mp3")
