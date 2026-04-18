@@ -1,0 +1,94 @@
+{
+  "1e48812d14b82efbaf57311749132474": {
+    "text_preview": "Welcome to this tutorial on Flow Matching. This presentation was made by Team 4. Throughout this tut",
+    "filename": "video1\\Slide 1 — Title.mp3"
+  },
+  "01af0150a69a789d7493add0df0d8c25": {
+    "text_preview": "Let's start with the basics. In this first section, we'll answer two fundamental questions: what is ",
+    "filename": "video1\\Slide 2—Flow Matching Basics.mp3"
+  },
+  "76523c43ae2d793cab06ffa47ced1599": {
+    "text_preview": "Flow matching is not just a theoretical tool — it powers some of the most impressive generative mode",
+    "filename": "video1\\Slide 3 — Applications.mp3"
+  },
+  "afa6ede0c28e78585a6f40e2750b5ff4": {
+    "text_preview": "Here's the big picture. We start with a source distribution p — typically a simple Gaussian — and we",
+    "filename": "video1\\Slide 5—The Big Picture.mp3"
+  },
+  "51fef3b2f7098f2d9e9bef55d2bab878": {
+    "text_preview": "This is related to an older idea called normalizing flows. In classical normalizing flows, you learn",
+    "filename": "video1\\Slide 6 — Normalizing Flows.mp3"
+  },
+  "8b9779040bc5ab1c050963a75b850b33": {
+    "text_preview": "To understand flow matching more deeply, we need to think about it as a continuous-time Markov proce",
+    "filename": "video1\\Slide 7 — Continuous-Time Markov Processes.mp3"
+  },
+  "8b111153efb26edf767dcaaf7c6a5633": {
+    "text_preview": "Let's be more precise. A flow is a family of maps psi-t, parameterized by time t from 0 to 1. Given ",
+    "filename": "video1\\Slide 10 — The Flow Map.mp3"
+  },
+  "aef5b7f6a8369d1feae011533913f137": {
+    "text_preview": "The flow psi-t and its velocity ut are two sides of the same coin. If you know the velocity, you can",
+    "filename": "video1\\Slide 11—Velocity and Flow.mp3"
+  },
+  "00cb9422af8598549a5e0de001493638": {
+    "text_preview": "One simple and important choice is the linear conditional flow: Xt equals t times X-1 plus one minus",
+    "filename": "video1\\Slides 12–13 — Linear Conditional Flow.mp3"
+  },
+  "dac72544ed574e5a7f8142f0ae3922a0": {
+    "text_preview": "When we push X-0 through the flow, the resulting Xt follows a marginal distribution pt. Understandin",
+    "filename": "video1\\Slide 14 — Marginal Path.mp3"
+  },
+  "9172afa165a0f486640c4c00aca66ade": {
+    "text_preview": "How do we sample from the trained model? We start by drawing X-0 from the source distribution p, the",
+    "filename": "video1\\Slides 15–18 — Sampling.mp3"
+  },
+  "2e14bf4a97c8a5f1601003ac48fa3c47": {
+    "text_preview": "Given a fixed target point x-1, the conditional flow is simply: This is a straight line from X-0 to ",
+    "filename": "video1\\Slides 20–21 — Conditional Flow and Probability Path.mp3"
+  },
+  "e78bccd5ebca480cc01e0127faa38411": {
+    "text_preview": "This gives us the key theorem: the marginal velocity ut of x, which generates the marginal path pt, ",
+    "filename": "video1\\Slide 22 — The Marginalization Theorem.mp3"
+  },
+  "3f43441d6739eca446ecb9617041b8ac": {
+    "text_preview": "Now we can write down the losses. The Flow Matching loss regresses directly onto the marginal veloci",
+    "filename": "video1\\Slides 23–25 — FM vs. CFM Loss.mp3"
+  },
+  "2f78181570ee7aaaa01e6c64b48c0b92": {
+    "text_preview": "How should we choose the conditional flow psi-t of x given x-1? One principled answer is to minimize",
+    "filename": "video1\\Slide 26–27 — Choosing the Conditional Flow- Optimal Transport.mp3"
+  },
+  "b99dd6e16bcc0b895ba833fd5c4a1c41": {
+    "text_preview": "Putting it together: the standard flow matching training objective using the conditional OT path is ",
+    "filename": "video1\\Slide 28 — Flow Matching with Cond-OT.mp3"
+  },
+  "19b90d57775ad0e03616d88d2d7054cd": {
+    "text_preview": "A more general family of paths is affine paths: Xt equals alpha-t times X-1 plus sigma-t times X-0. ",
+    "filename": "video1\\Slides 29–31 — Affine and Gaussian Paths.mp3"
+  },
+  "9f9601893f86df6ba669a5319b685457": {
+    "text_preview": "Now we turn to advanced design choices in flow matching. This section covers three key topics: Condi",
+    "filename": "video1\\Slide 32 — Flow Matching Advanced Designs.mp3"
+  },
+  "3d164c6bdf864e84c4e297c064bcf756": {
+    "text_preview": "The three topics in advanced flow matching design are: Conditioning and Guidance — how to train cond",
+    "filename": "video1\\Slides 33 — Section Overview.mp3"
+  },
+  "86f2e968dba603adc6b0a35cad216c71": {
+    "text_preview": "Let's start with conditioning. In many real-world applications, data comes with labels or context — ",
+    "filename": "video1\\Slides 34–38 — Conditioning.mp3"
+  },
+  "15d2bc5ba320777471581a0a591d021f": {
+    "text_preview": "What if your model was trained unconditionally, but you want to generate conditioned samples at infe",
+    "filename": "video1\\Slides 39–41 — Guidance.mp3"
+  },
+  "a59b26df6063330c0e9905b05372f706": {
+    "text_preview": "Now, data couplings. So far, we've assumed the source distribution X-0 and target distribution X-1 a",
+    "filename": "video1\\Slides 42–53 — Data Couplings- Paired Data.mp3"
+  },
+  "f07237479f11532e1da79866a9fc1be8": {
+    "text_preview": "To close this section: Equivariant Flow Matching, as developed in papers by Wu et al., Song et al., ",
+    "filename": "video1\\Slide 83 — Equivariant Flow Matching Summary.mp3"
+  }
+}
